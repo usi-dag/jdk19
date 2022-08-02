@@ -684,8 +684,7 @@ final class Double64Vector extends DoubleVector {
         }
 
         @ForceInline
-        /* package-private */
-        Double64Mask xor(VectorMask<Double> mask) {
+        public Double64Mask xor(VectorMask<Double> mask) {
             Objects.requireNonNull(mask);
             Double64Mask m = (Double64Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Double64Mask.class, null, long.class, VLENGTH,

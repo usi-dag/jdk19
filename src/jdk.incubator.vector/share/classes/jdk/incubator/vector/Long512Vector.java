@@ -699,8 +699,7 @@ final class Long512Vector extends LongVector {
         }
 
         @ForceInline
-        /* package-private */
-        Long512Mask xor(VectorMask<Long> mask) {
+        public Long512Mask xor(VectorMask<Long> mask) {
             Objects.requireNonNull(mask);
             Long512Mask m = (Long512Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Long512Mask.class, null, long.class, VLENGTH,

@@ -725,8 +725,7 @@ final class Int512Vector extends IntVector {
         }
 
         @ForceInline
-        /* package-private */
-        Int512Mask xor(VectorMask<Integer> mask) {
+        public Int512Mask xor(VectorMask<Integer> mask) {
             Objects.requireNonNull(mask);
             Int512Mask m = (Int512Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Int512Mask.class, null, int.class, VLENGTH,

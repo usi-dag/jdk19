@@ -695,8 +695,7 @@ final class ShortMaxVector extends ShortVector {
         }
 
         @ForceInline
-        /* package-private */
-        ShortMaxMask xor(VectorMask<Short> mask) {
+        public ShortMaxMask xor(VectorMask<Short> mask) {
             Objects.requireNonNull(mask);
             ShortMaxMask m = (ShortMaxMask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, ShortMaxMask.class, null, short.class, VLENGTH,

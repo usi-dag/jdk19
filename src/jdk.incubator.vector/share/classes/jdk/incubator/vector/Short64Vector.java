@@ -701,8 +701,7 @@ final class Short64Vector extends ShortVector {
         }
 
         @ForceInline
-        /* package-private */
-        Short64Mask xor(VectorMask<Short> mask) {
+        public Short64Mask xor(VectorMask<Short> mask) {
             Objects.requireNonNull(mask);
             Short64Mask m = (Short64Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Short64Mask.class, null, short.class, VLENGTH,

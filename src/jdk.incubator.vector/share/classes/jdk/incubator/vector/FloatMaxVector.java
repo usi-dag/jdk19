@@ -683,8 +683,7 @@ final class FloatMaxVector extends FloatVector {
         }
 
         @ForceInline
-        /* package-private */
-        FloatMaxMask xor(VectorMask<Float> mask) {
+        public FloatMaxMask xor(VectorMask<Float> mask) {
             Objects.requireNonNull(mask);
             FloatMaxMask m = (FloatMaxMask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, FloatMaxMask.class, null, int.class, VLENGTH,

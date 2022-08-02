@@ -709,8 +709,7 @@ final class Int256Vector extends IntVector {
         }
 
         @ForceInline
-        /* package-private */
-        Int256Mask xor(VectorMask<Integer> mask) {
+        public Int256Mask xor(VectorMask<Integer> mask) {
             Objects.requireNonNull(mask);
             Int256Mask m = (Int256Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Int256Mask.class, null, int.class, VLENGTH,

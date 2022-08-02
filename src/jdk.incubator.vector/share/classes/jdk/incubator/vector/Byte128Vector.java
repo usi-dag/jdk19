@@ -725,8 +725,7 @@ final class Byte128Vector extends ByteVector {
         }
 
         @ForceInline
-        /* package-private */
-        Byte128Mask xor(VectorMask<Byte> mask) {
+        public Byte128Mask xor(VectorMask<Byte> mask) {
             Objects.requireNonNull(mask);
             Byte128Mask m = (Byte128Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Byte128Mask.class, null, byte.class, VLENGTH,

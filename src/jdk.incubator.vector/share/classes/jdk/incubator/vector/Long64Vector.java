@@ -685,8 +685,7 @@ final class Long64Vector extends LongVector {
         }
 
         @ForceInline
-        /* package-private */
-        Long64Mask xor(VectorMask<Long> mask) {
+        public Long64Mask xor(VectorMask<Long> mask) {
             Objects.requireNonNull(mask);
             Long64Mask m = (Long64Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Long64Mask.class, null, long.class, VLENGTH,

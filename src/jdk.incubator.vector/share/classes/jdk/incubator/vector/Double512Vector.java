@@ -698,8 +698,7 @@ final class Double512Vector extends DoubleVector {
         }
 
         @ForceInline
-        /* package-private */
-        Double512Mask xor(VectorMask<Double> mask) {
+        public Double512Mask xor(VectorMask<Double> mask) {
             Objects.requireNonNull(mask);
             Double512Mask m = (Double512Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Double512Mask.class, null, long.class, VLENGTH,

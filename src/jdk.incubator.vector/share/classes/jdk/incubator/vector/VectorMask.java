@@ -413,6 +413,20 @@ public abstract class VectorMask<E> extends jdk.internal.vm.vector.VectorSupport
      */
     public abstract VectorMask<E> eq(VectorMask<E> m);
 
+
+    /**
+     * Determines logical exclusive disjunction of this mask
+     * to a second input mask (as boolean {@code a^b}
+     * or {@code a==~b}
+     * <p>
+     * This is a lane-wise binary operation tests each
+     * corresponding pair of mask bits for exclusivity.
+     * </p>
+     * @param m the input mask
+     * @return a mask showing where the two input masks were not equal
+     */
+    public abstract VectorMask<E> xor(VectorMask<E> m);
+
     /**
      * Logically subtracts a second input mask
      * from this mask (as {@code a&~b}).

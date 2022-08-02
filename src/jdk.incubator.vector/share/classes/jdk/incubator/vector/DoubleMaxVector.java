@@ -683,8 +683,7 @@ final class DoubleMaxVector extends DoubleVector {
         }
 
         @ForceInline
-        /* package-private */
-        DoubleMaxMask xor(VectorMask<Double> mask) {
+        public DoubleMaxMask xor(VectorMask<Double> mask) {
             Objects.requireNonNull(mask);
             DoubleMaxMask m = (DoubleMaxMask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, DoubleMaxMask.class, null, long.class, VLENGTH,

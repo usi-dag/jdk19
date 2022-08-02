@@ -757,8 +757,7 @@ final class Short512Vector extends ShortVector {
         }
 
         @ForceInline
-        /* package-private */
-        Short512Mask xor(VectorMask<Short> mask) {
+        public Short512Mask xor(VectorMask<Short> mask) {
             Objects.requireNonNull(mask);
             Short512Mask m = (Short512Mask)mask;
             return VectorSupport.binaryOp(VECTOR_OP_XOR, Short512Mask.class, null, short.class, VLENGTH,
